@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://nojvav7ppklc"]
+
+[ext_resource type="Script" path="res://assets/scripts/Delete Beggers.gd" id="1_0iqm0"]
+[ext_resource type="Texture2D" uid="uid://ukpm4ilwjeh8" path="res://assets/sprites/Deleater.png" id="2_esmcx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lefsc"]
+size = Vector2(120, 120)
+
+[node name="Delete Beggers" type="Area2D" groups=["Deleater"]]
+position = Vector2(418, 182)
+collision_layer = 65
+script = ExtResource("1_0iqm0")
+metadata/_edit_group_ = true
+
+[node name="Delete Begger Sprite" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_esmcx")
+
+[node name="Delete Beggers Box" type="CollisionShape2D" parent="."]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_lefsc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

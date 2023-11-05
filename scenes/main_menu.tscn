@@ -1,0 +1,196 @@
+[gd_scene load_steps=21 format=3 uid="uid://bau2w7415x7lv"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_6cpei"]
+[ext_resource type="Texture2D" uid="uid://btsctn3g20hfu" path="res://assets/sprites/stormyMountains.png" id="1_yuwl1"]
+[ext_resource type="Texture2D" uid="uid://r7jj6nqtpnb8" path="res://assets/sprites/player.png" id="3_0kp22"]
+[ext_resource type="Script" path="res://scenes/characterName.gd" id="3_f0fxt"]
+[ext_resource type="Script" path="res://scenes/Button.gd" id="3_k6h7j"]
+[ext_resource type="Script" path="res://scenes/Edit Name.gd" id="4_qg3iw"]
+[ext_resource type="Script" path="res://scenes/startGame.gd" id="5_q7pu7"]
+[ext_resource type="Script" path="res://scenes/editPlayerName.gd" id="5_qcbqx"]
+[ext_resource type="Script" path="res://scenes/Quit.gd" id="8_hwl8u"]
+[ext_resource type="Script" path="res://scenes/EditSuccessButton.gd" id="10_k5q8q"]
+[ext_resource type="Script" path="res://scenes/EditCancelButton.gd" id="11_3hoai"]
+[ext_resource type="Script" path="res://scenes/chooseCharacterSuccessButton.gd" id="12_hdp5j"]
+[ext_resource type="Script" path="res://scenes/chooseCharacterCancelButton.gd" id="13_8gaa4"]
+[ext_resource type="Texture2D" uid="uid://d3bktpxe7omli" path="res://assets/sprites/FatGuy.png" id="15_dmhr2"]
+[ext_resource type="Script" path="res://scenes/characterBusinessMan.gd" id="15_ouxkl"]
+[ext_resource type="Script" path="res://scenes/characterFatMerchant.gd" id="16_2mjqs"]
+[ext_resource type="Script" path="res://scenes/characterAthlete.gd" id="17_gsxvv"]
+[ext_resource type="Texture2D" uid="uid://b8qo14wcx0udt" path="res://assets/sprites/Athlete.png" id="17_kkcpl"]
+[ext_resource type="Script" path="res://scenes/Next.gd" id="19_gogdl"]
+[ext_resource type="Script" path="res://scenes/prev.gd" id="20_ktic3"]
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6cpei")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(800, 454)
+scale = Vector2(1.55664, 1.24167)
+texture = ExtResource("1_yuwl1")
+
+[node name="chooseCharacter" type="Button" parent="."]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 292.0
+offset_right = 1061.0
+offset_bottom = 377.0
+theme_override_font_sizes/font_size = 50
+text = "Choose Character"
+script = ExtResource("3_k6h7j")
+
+[node name="Edit Name" type="Button" parent="."]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 417.0
+offset_right = 1061.0
+offset_bottom = 502.0
+theme_override_font_sizes/font_size = 50
+text = "Edit Name"
+script = ExtResource("4_qg3iw")
+
+[node name="startGame" type="Button" parent="."]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 533.0
+offset_right = 802.0
+offset_bottom = 628.0
+theme_override_font_sizes/font_size = 50
+text = "Start Game"
+script = ExtResource("5_q7pu7")
+
+[node name="characterName" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 527.0
+offset_top = 172.0
+offset_right = -530.0
+offset_bottom = -643.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Johannas"
+horizontal_alignment = 1
+script = ExtResource("3_f0fxt")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 836.0
+offset_top = 532.0
+offset_right = 1059.0
+offset_bottom = 630.0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+script = ExtResource("8_hwl8u")
+
+[node name="editPlayerName" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 173.0
+offset_right = 1062.0
+offset_bottom = 252.0
+theme_override_font_sizes/font_size = 50
+script = ExtResource("5_qcbqx")
+
+[node name="EditSuccessButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 814.0
+offset_top = 291.0
+offset_right = 1060.0
+offset_bottom = 378.0
+theme_override_font_sizes/font_size = 50
+text = "Apply"
+script = ExtResource("10_k5q8q")
+
+[node name="EditCancelButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 291.0
+offset_right = 762.0
+offset_bottom = 379.0
+theme_override_font_sizes/font_size = 50
+text = "Cancel"
+script = ExtResource("11_3hoai")
+
+[node name="chooseCharacterSuccessButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 658.0
+offset_right = 1059.0
+offset_bottom = 749.0
+theme_override_font_sizes/font_size = 50
+text = "Select"
+script = ExtResource("12_hdp5j")
+
+[node name="chooseCharacterCancelButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 655.0
+offset_right = 780.0
+offset_bottom = 750.0
+theme_override_font_sizes/font_size = 50
+text = "Cancel"
+script = ExtResource("13_8gaa4")
+
+[node name="businessMan" type="Sprite2D" parent="."]
+position = Vector2(311, 455)
+scale = Vector2(2.97266, 4.96875)
+texture = ExtResource("3_0kp22")
+script = ExtResource("15_ouxkl")
+
+[node name="FatMerchant" type="Sprite2D" parent="."]
+position = Vector2(371, 467)
+scale = Vector2(9.65625, 8.90625)
+texture = ExtResource("15_dmhr2")
+script = ExtResource("16_2mjqs")
+
+[node name="Athlete" type="Sprite2D" parent="."]
+position = Vector2(370, 435)
+scale = Vector2(8.59375, 10.75)
+texture = ExtResource("17_kkcpl")
+script = ExtResource("17_gsxvv")
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 0
+offset_left = 838.0
+offset_top = 533.0
+offset_right = 1063.0
+offset_bottom = 626.0
+theme_override_font_sizes/font_size = 50
+text = "Next"
+script = ExtResource("19_gogdl")
+
+[node name="prev" type="Button" parent="."]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 534.0
+offset_right = 806.0
+offset_bottom = 629.0
+theme_override_font_sizes/font_size = 50
+text = "Prev"
+script = ExtResource("20_ktic3")
+
+[connection signal="pressed" from="chooseCharacter" to="." method="_on_choose_character_pressed"]
+[connection signal="pressed" from="Edit Name" to="." method="_on_edit_name_pressed"]
+[connection signal="pressed" from="startGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="EditSuccessButton" to="." method="_on_edit_success_button_pressed"]
+[connection signal="pressed" from="EditCancelButton" to="." method="_on_edit_cancel_button_pressed"]
+[connection signal="pressed" from="chooseCharacterSuccessButton" to="." method="_on_choose_character_success_button_pressed"]
+[connection signal="pressed" from="chooseCharacterCancelButton" to="." method="_on_choose_character_cancel_button_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="prev" to="." method="_on_prev_pressed"]

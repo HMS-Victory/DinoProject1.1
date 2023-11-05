@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://fjtctj3s3s4g"
+path="res://.godot/imported/unhappy 2.mp3-4856cedda21eeae52fc9e7f4dabf8222.mp3str"
+
+[deps]
+
+source_file="res://assets/sound effects/unhappy 2.mp3"
+dest_files=["res://.godot/imported/unhappy 2.mp3-4856cedda21eeae52fc9e7f4dabf8222.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

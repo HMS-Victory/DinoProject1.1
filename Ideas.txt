@@ -1,0 +1,34 @@
+Dad
+Add charaters
+
+Mom
+
+Autumn
+In harder levels add running beggers
+
+Cierra
+
+Ririe
+
+Taylor
+
+Karissa 
+Adding random angles
+
+Raice
+Difficulties
+
+Todo
+Add/Make Music
+Blue begger/business man that gives money when you hit him
+
+Todo James
+Add UI
+Add Cheat codes for Devs --done
+fix bugs
+Add player names --done
+Add high score --done
+Begger cannon
+
+Buggs
+coins cutting off sound when collected

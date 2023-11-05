@@ -1,0 +1,180 @@
+[gd_scene load_steps=15 format=3 uid="uid://b2btlta6xvkms"]
+
+[ext_resource type="Texture2D" uid="uid://yks0ub0ej1cn" path="res://assets/sprites/Base enemy animation.png" id="2_uqh4y"]
+[ext_resource type="Script" path="res://assets/scripts/Begger Detection.gd" id="3_b1fwe"]
+[ext_resource type="Script" path="res://assets/scripts/Begger Physics.gd" id="3_mics7"]
+[ext_resource type="AudioStream" uid="uid://bitlf2s3cvffi" path="res://assets/sound effects/begger 1.mp3" id="4_03wuq"]
+[ext_resource type="AudioStream" uid="uid://cw8o5ytwwj7id" path="res://assets/sound effects/begger 5.mp3" id="4_8mqs7"]
+[ext_resource type="AudioStream" uid="uid://dsjgfi6agm11k" path="res://assets/sound effects/begger 2.mp3" id="5_2ig85"]
+[ext_resource type="AudioStream" uid="uid://i6vtht67frrm" path="res://assets/sound effects/begger 6.mp3" id="5_yag4q"]
+[ext_resource type="AudioStream" uid="uid://d188er7atimoc" path="res://assets/sound effects/begger 3.mp3" id="6_u76ig"]
+[ext_resource type="AudioStream" uid="uid://deunqijcs4pgs" path="res://assets/sound effects/begger 4.mp3" id="7_sc0na"]
+
+[sub_resource type="Animation" id="Animation_2ia0m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Begger Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_uqh4y")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Begger Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Begger Sprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Begger Sprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_eoif4"]
+resource_name = "rich"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Begger Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Begger Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_uqh4y")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Begger Sprite:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Begger Sprite:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_trors"]
+_data = {
+"RESET": SubResource("Animation_2ia0m"),
+"rich": SubResource("Animation_eoif4")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s745v"]
+size = Vector2(13, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rd8yk"]
+size = Vector2(19, 81)
+
+[node name="Begger" type="CharacterBody2D" groups=["Begger"]]
+position = Vector2(325, 187)
+collision_layer = 33
+collision_mask = 40
+script = ExtResource("3_mics7")
+
+[node name="Begger Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(1.35, 1.35)
+texture = ExtResource("2_uqh4y")
+hframes = 2
+
+[node name="rich" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_trors")
+}
+
+[node name="Begger Collision Box" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 2)
+shape = SubResource("RectangleShape2D_s745v")
+
+[node name="Begger Detection" type="Area2D" parent="."]
+position = Vector2(-1, 1)
+collision_layer = 0
+collision_mask = 66
+script = ExtResource("3_b1fwe")
+
+[node name="Begger Detection Box" type="CollisionShape2D" parent="Begger Detection"]
+position = Vector2(2.5, -0.5)
+shape = SubResource("RectangleShape2D_rd8yk")
+
+[node name="begger1" type="AudioStreamPlayer2D" parent="Begger Detection"]
+stream = ExtResource("4_03wuq")
+
+[node name="begger2" type="AudioStreamPlayer2D" parent="Begger Detection"]
+stream = ExtResource("5_2ig85")
+
+[node name="begger3" type="AudioStreamPlayer2D" parent="Begger Detection"]
+stream = ExtResource("6_u76ig")
+
+[node name="begger4" type="AudioStreamPlayer2D" parent="Begger Detection"]
+stream = ExtResource("7_sc0na")
+
+[node name="begger5" type="AudioStreamPlayer2D" parent="Begger Detection"]
+stream = ExtResource("4_8mqs7")
+
+[node name="begger6" type="AudioStreamPlayer2D" parent="Begger Detection"]
+stream = ExtResource("5_yag4q")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[connection signal="area_entered" from="Begger Detection" to="." method="_on_begger_detection_area_entered"]
+[connection signal="body_entered" from="Begger Detection" to="." method="_on_begger_detection_body_entered"]
+[connection signal="body_entered" from="Begger Detection" to="Begger Detection" method="_on_body_entered"]
