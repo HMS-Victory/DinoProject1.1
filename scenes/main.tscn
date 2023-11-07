@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d0am6jsvjln63"]
+[gd_scene load_steps=29 format=3 uid="uid://d0am6jsvjln63"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_5a1r6"]
 [ext_resource type="Texture2D" uid="uid://ubi3ii1i4gyj" path="res://assets/sprites/moving floor.png" id="3_ei815"]
@@ -19,10 +19,11 @@
 [ext_resource type="Script" path="res://scenes/HighScore.gd" id="15_8ig6s"]
 [ext_resource type="Script" path="res://scenes/CheatsEnabled.gd" id="16_xw55l"]
 [ext_resource type="Script" path="res://scenes/EndGame.gd" id="18_2jqci"]
-[ext_resource type="PackedScene" path="res://scenes/Athlete.tscn" id="19_shvir"]
-[ext_resource type="PackedScene" path="res://scenes/FatMerchant.tscn" id="20_cwxhr"]
+[ext_resource type="PackedScene" uid="uid://cks11vh7qbc83" path="res://scenes/Athlete.tscn" id="19_shvir"]
+[ext_resource type="PackedScene" uid="uid://cks11vh7qbc83" path="res://scenes/FatMerchant.tscn" id="20_cwxhr"]
 [ext_resource type="Script" path="res://scenes/Athlete.gd" id="20_f2wnq"]
 [ext_resource type="Script" path="res://scenes/FatMerchant.gd" id="22_8kbfp"]
+[ext_resource type="Script" path="res://scenes/characterSpawner.gd" id="24_y2c2f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ndr16"]
 texture = ExtResource("4_mmgt6")
@@ -1017,6 +1018,10 @@ script = ExtResource("20_f2wnq")
 [node name="FatMerchant" parent="." instance=ExtResource("20_cwxhr")]
 position = Vector2(212, 626)
 script = ExtResource("22_8kbfp")
+
+[node name="characterSpawner" type="Area2D" parent="."]
+position = Vector2(176, 554)
+script = ExtResource("24_y2c2f")
 
 [connection signal="timeout" from="Moving background/Scroll Timer" to="Moving background" method="_on_timer_timeout"]
 [connection signal="pressed" from="UI/EndGame" to="." method="_on_end_game_pressed"]
