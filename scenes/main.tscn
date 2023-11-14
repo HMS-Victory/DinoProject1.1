@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://d0am6jsvjln63"]
+[gd_scene load_steps=24 format=3 uid="uid://d0am6jsvjln63"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_5a1r6"]
 [ext_resource type="Texture2D" uid="uid://ubi3ii1i4gyj" path="res://assets/sprites/moving floor.png" id="3_ei815"]
@@ -7,11 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://cmi1kyryficxq" path="res://assets/sound effects/coin 4.mp3" id="5_hkn4q"]
 [ext_resource type="PackedScene" uid="uid://nojvav7ppklc" path="res://scenes/delete_beggers.tscn" id="7_8qvce"]
 [ext_resource type="Script" path="res://assets/scripts/Background.gd" id="7_l55tx"]
-[ext_resource type="PackedScene" uid="uid://6br8blsx862r" path="res://scenes/player.tscn" id="7_mf4kv"]
 [ext_resource type="PackedScene" uid="uid://cjkwr32q4ux6o" path="res://scenes/coin_spawner.tscn" id="8_hleix"]
 [ext_resource type="Texture2D" uid="uid://b2o7ex6owysgk" path="res://assets/sprites/moutain_loop22 fix.png" id="8_qr6em"]
 [ext_resource type="PackedScene" uid="uid://cpjne2hqnwj3d" path="res://scenes/begger_spawner.tscn" id="8_w17j7"]
-[ext_resource type="Script" path="res://scenes/businessMan.gd" id="9_2nt8i"]
 [ext_resource type="Script" path="res://assets/scripts/Coins LB.gd" id="11_4ien4"]
 [ext_resource type="Script" path="res://assets/scripts/Score LB.gd" id="12_w4yx3"]
 [ext_resource type="Script" path="res://assets/scripts/Level LB.gd" id="13_7jweb"]
@@ -19,10 +17,6 @@
 [ext_resource type="Script" path="res://scenes/HighScore.gd" id="15_8ig6s"]
 [ext_resource type="Script" path="res://scenes/CheatsEnabled.gd" id="16_xw55l"]
 [ext_resource type="Script" path="res://scenes/EndGame.gd" id="18_2jqci"]
-[ext_resource type="PackedScene" uid="uid://cks11vh7qbc83" path="res://scenes/Athlete.tscn" id="19_shvir"]
-[ext_resource type="PackedScene" uid="uid://cks11vh7qbc83" path="res://scenes/FatMerchant.tscn" id="20_cwxhr"]
-[ext_resource type="Script" path="res://scenes/Athlete.gd" id="20_f2wnq"]
-[ext_resource type="Script" path="res://scenes/FatMerchant.gd" id="22_8kbfp"]
 [ext_resource type="Script" path="res://scenes/characterSpawner.gd" id="24_y2c2f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ndr16"]
@@ -869,6 +863,9 @@ physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_8yrj6")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f23cx"]
+size = Vector2(106, 118)
+
 [node name="gameScene" type="Node2D"]
 position = Vector2(1, -2)
 script = ExtResource("1_5a1r6")
@@ -912,10 +909,6 @@ tile_set = SubResource("TileSet_e3yn5")
 cell_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(1048576, 720896, 11, 1048577, 720896, 11, 1048578, 720896, 11, 1048579, 720896, 11, 1048580, 720896, 11, 1048581, 720896, 11, 1048582, 720896, 11, 1048583, 720896, 11, 1048584, 720896, 11, 1048585, 720896, 11, 1048586, 720896, 11, 1048587, 720896, 11, 1048588, 720896, 11, 1048589, 720896, 11, 1048590, 720896, 11, 1048591, 720896, 11, 1048592, 720896, 11, 1048593, 720896, 11, 1048594, 720896, 11, 1048595, 720896, 11, 1048596, 720896, 11, 1048597, 720896, 11, 1048598, 720896, 11, 1048599, 720896, 11, 1048600, 720896, 11, 1048601, 720896, 11, 1048602, 720896, 11, 1048603, 720896, 11, 1048604, 720896, 11, 1048605, 720896, 11, 1048606, 720896, 11, 1048607, 720896, 11, 1048608, 720896, 11, 1048609, 720896, 11, 1048610, 720896, 11, 1048611, 720896, 11, 1048612, 720896, 11, 1048613, 720896, 11, 1048614, 720896, 11, 1048615, 720896, 11, 1048616, 720896, 11, 1048617, 720896, 11, 1048618, 720896, 11, 1048619, 720896, 11, 1048620, 720896, 11, 1048621, 720896, 11, 1048622, 720896, 11, 1048623, 720896, 11, 1048624, 720896, 11, 1048625, 720896, 11)
-
-[node name="businessMan" parent="." instance=ExtResource("7_mf4kv")]
-position = Vector2(211, 629)
-script = ExtResource("9_2nt8i")
 
 [node name="Delete Beggers" parent="." instance=ExtResource("7_8qvce")]
 position = Vector2(-152, 524)
@@ -1011,17 +1004,12 @@ theme_override_font_sizes/font_size = 50
 text = "End Game"
 script = ExtResource("18_2jqci")
 
-[node name="Athlete" parent="." instance=ExtResource("19_shvir")]
-position = Vector2(211, 629)
-script = ExtResource("20_f2wnq")
-
-[node name="FatMerchant" parent="." instance=ExtResource("20_cwxhr")]
-position = Vector2(212, 626)
-script = ExtResource("22_8kbfp")
-
 [node name="characterSpawner" type="Area2D" parent="."]
-position = Vector2(176, 554)
+position = Vector2(208, 627)
 script = ExtResource("24_y2c2f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="characterSpawner"]
+shape = SubResource("RectangleShape2D_f23cx")
 
 [connection signal="timeout" from="Moving background/Scroll Timer" to="Moving background" method="_on_timer_timeout"]
 [connection signal="pressed" from="UI/EndGame" to="." method="_on_end_game_pressed"]

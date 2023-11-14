@@ -12,7 +12,7 @@ func _ready():
 		characterLoader=preload("res://scenes/FatMerchant.tscn")
 	
 	_character= characterLoader.instantiate()
-	_character.position = Vector2(212, 626)
+	_character.position = Vector2(0,0)
 	add_child(_character)
 		
 func _process(_delta):

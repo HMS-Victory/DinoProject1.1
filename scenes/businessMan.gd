@@ -17,13 +17,16 @@ extends CharacterBody2D
 
 
 func _physics_process(delta):	
+	print("running")
 	move_and_slide()
 	velocity.y += Global.gravity 
 
 	if !Global.gameover:
+		print('physics is not working')
 		#ifs for player physics
 		if Input.is_action_just_pressed("Speed"): #if statment for movement
 			Global.dificultySpeed += Global.speedUp
+			print('speed should work')
 		elif Input.is_action_just_released("Speed"):
 			Global.dificultySpeed -= Global.speedUp
 		elif Input.is_action_just_pressed("Slow"):

@@ -1,9 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://cks11vh7qbc83"]
+[gd_scene load_steps=35 format=3 uid="uid://cks11vh7qbc83"]
 
 [ext_resource type="Script" path="res://assets/scripts/Player.gd" id="1_0krty"]
 [ext_resource type="Texture2D" uid="uid://bghr2xv1ake67" path="res://assets/sprites/Player sprite sheet jump.png" id="2_0k3t1"]
 [ext_resource type="Texture2D" uid="uid://gmwua7jr0ob2" path="res://assets/sprites/Player sprite sheet.png" id="3_7d1xo"]
-[ext_resource type="Script" path="res://scenes/Sprite2D.gd" id="3_hj8q6"]
 [ext_resource type="AudioStream" uid="uid://cwdjk5i1b31ko" path="res://assets/sound effects/running 1.mp3" id="4_ogmx3"]
 [ext_resource type="Texture2D" uid="uid://mfx0dgientos" path="res://assets/sprites/skidding 2.png" id="5_gex7e"]
 [ext_resource type="AudioStream" uid="uid://dorjydm3s18o5" path="res://assets/sound effects/jumping 1.mp3" id="5_xnxsb"]
@@ -235,10 +234,10 @@ script = ExtResource("1_0krty")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 10
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_7d1xo")
 hframes = 8
-script = ExtResource("3_hj8q6")
 
 [node name="Animations" type="AnimationPlayer" parent="."]
 libraries = {

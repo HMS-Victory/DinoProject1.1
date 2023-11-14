@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://6br8blsx862r"]
+[gd_scene load_steps=36 format=3 uid="uid://bvpmtw2arvdu0"]
 
 [ext_resource type="Script" path="res://assets/scripts/Player.gd" id="1_0krty"]
 [ext_resource type="Texture2D" uid="uid://bghr2xv1ake67" path="res://assets/sprites/Player sprite sheet jump.png" id="2_0k3t1"]

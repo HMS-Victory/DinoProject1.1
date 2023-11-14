@@ -1,6 +1,6 @@
 [gd_scene load_steps=36 format=3 uid="uid://cks11vh7qbc83"]
 
-[ext_resource type="Script" path="res://assets/scripts/Player.gd" id="1_0krty"]
+[ext_resource type="Script" path="res://scenes/businessMan.gd" id="1_dcsra"]
 [ext_resource type="Texture2D" uid="uid://bghr2xv1ake67" path="res://assets/sprites/Player sprite sheet jump.png" id="2_0k3t1"]
 [ext_resource type="Texture2D" uid="uid://gmwua7jr0ob2" path="res://assets/sprites/Player sprite sheet.png" id="3_7d1xo"]
 [ext_resource type="Script" path="res://scenes/Sprite2D.gd" id="3_hj8q6"]
@@ -231,7 +231,7 @@ scale_max = 5.0
 position = Vector2(676, 405)
 collision_layer = 3
 collision_mask = 4
-script = ExtResource("1_0krty")
+script = ExtResource("1_dcsra")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
